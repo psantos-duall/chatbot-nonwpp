@@ -53,7 +53,7 @@ app.post('/', async (req, res) => {
             presence_penalty: 0
         });
 
-        //console.log(request);
+        console.log(request.data.id);
 
         //console.log("response raw: " + request.data.choices[0].message.content)
 
