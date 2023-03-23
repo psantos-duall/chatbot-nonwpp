@@ -51,7 +51,7 @@ app.post('/', async (req, res) => {
             presence_penalty: 0
         });
 
-        console.log("response raw: " + JSON.stringify(response))
+        console.log("response raw: " + response.data)
 
         //console.log("response choices: " + response.data.choices[0].text)
 
