@@ -51,6 +51,8 @@ app.post('/', async (req, res) => {
             presence_penalty: 0
         });
 
+        console.log(response.data.choices[0].text)
+
         res.status(200).send({
             bot: response.data.choices[0].text
         });
