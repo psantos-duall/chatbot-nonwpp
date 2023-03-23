@@ -32,6 +32,7 @@ app.get('/', async (req, res) => {
 
 app.post('/', async (req, res) => {
     try {
+        console.log(req);
         console.log(req.body);
         
         const prompt = req.body.prompt;
