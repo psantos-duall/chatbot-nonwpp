@@ -37,7 +37,7 @@ app.post('/', async (req, res) => {
         //console.log(req);
         //console.log(req);
         //console.log(req.body);
-        console.log(req.body.prompt);
+        console.log("prompt: " + req.body.prompt);
         
         const prompt = req.body.prompt;
         
@@ -51,7 +51,9 @@ app.post('/', async (req, res) => {
             presence_penalty: 0
         });
 
-        console.log(response.data.choices[0].text)
+        console.log("response raw: " + response)
+
+        console.log("response choices: " + response.data.choices[0].text)
 
         res.status(200).send({
             bot: response.data.choices[0].text
