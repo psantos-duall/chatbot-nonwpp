@@ -39,11 +39,11 @@ app.post('/', async (req, res) => {
         //console.log(req);
         //console.log(req);
         //console.log(req.body);
-        console.log("prompt: " + req.body.prompt);
+        console.log("body: " + req.body);
         
         const prompt = req.body.prompt;
         
-        const response = await openai.createChatCompletion({
+        const request = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
             messages: [{role: "user", content:`${prompt}`}],
             temperature: 0.2,
@@ -53,19 +53,23 @@ app.post('/', async (req, res) => {
             presence_penalty: 0
         });
 
-        console.log("response raw: " + response.data)
+        console.log(request);
+
+        console.log("response raw: " + request.data.choices[0].message.content)
 
         //console.log("response choices: " + response.data.choices[0].text)
 
-        res.status(200).send({
-            bot: response.data.choices[0].text
-        });
-        
         /*
+        res.status(200).send({
+            bot: request.data.choices[0].text
+        });
+        */
+        
+        
         res.status(200).send({
             body: "OK"
         });
-        */
+        
     }
     catch (error){
         console.log(error);
