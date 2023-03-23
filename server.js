@@ -55,13 +55,13 @@ app.post('/', async (req, res) => {
 
         console.log(request.data.id);
 
-        //console.log("response raw: " + request.data.choices[0].message.content)
+        console.log("response raw: " + request.data.choices[0].message.content)
 
         //console.log("response choices: " + response.data.choices[0].text)
 
         
         res.status(200).send({
-            bot: request.data.choices[0].text
+            bot: request.data.choices[0].message.content
         });
         
     }
