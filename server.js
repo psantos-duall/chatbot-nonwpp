@@ -39,7 +39,7 @@ app.post('/', async (req, res) => {
         //console.log(req);
         //console.log(req);
         //console.log(req.body);
-        console.log("body: " + req.body);
+        //console.log("body: " + req.body);
         
         const prompt = req.body.prompt;
         
@@ -53,21 +53,15 @@ app.post('/', async (req, res) => {
             presence_penalty: 0
         });
 
-        console.log(request);
+        //console.log(request);
 
-        console.log("response raw: " + request.data.choices[0].message.content)
+        //console.log("response raw: " + request.data.choices[0].message.content)
 
         //console.log("response choices: " + response.data.choices[0].text)
 
-        /*
+        
         res.status(200).send({
             bot: request.data.choices[0].text
-        });
-        */
-        
-        
-        res.status(200).send({
-            body: "OK"
         });
         
     }
